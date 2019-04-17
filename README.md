@@ -1,18 +1,18 @@
-###请严格按照文档规范填写注释（仅支持json格式返回数据）
+### 请严格按照文档规范填写注释（仅支持json格式返回数据）
  + PHP >= 5.4
 
-###使用方法：
+### 使用方法：
 * 引入Miracle.php
 ```
 include (EXTEND_PATH.'miracle/Miracle.php');
 $res = (new \Miracle)->index($path)->markdownText($domain)->setMarkdown($path, $name);
 ```
 方法参数说明：
-* ####index (string $path[需生成md文件的文件路径])
-* ####markdownText (string $domain[域名])
-* ####setMarkdown (string $path[md文件保存路径], string $name[保存文件名])
+* #### index (string $path[需生成md文件的文件路径])
+* #### markdownText (string $domain[域名])
+* #### setMarkdown (string $path[md文件保存路径], string $name[保存文件名])
 
-###注释语法：
+### 注释语法：
 ```
 /**
      * @description 订单信息
@@ -47,7 +47,7 @@ $res = (new \Miracle)->index($path)->markdownText($domain)->setMarkdown($path, $
 * @var 返回参数
 * @example 返回数据示例
 
-#文档生成后示例:
+# 文档生成后示例:
 
 ## 订单信息
 
