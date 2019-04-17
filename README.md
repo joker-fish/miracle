@@ -51,18 +51,18 @@ $res = (new \Miracle)->index($path)->markdownText($domain)->setMarkdown($path, $
 
 ## 订单信息
 
-2.请求地址：www.baidu.com/test/index.html
+1.请求地址：www.baidu.com/test/index.html
 
-3.请求方式：post
+2.请求方式：post
 
-4.请求参数：
+3.请求参数：
 
 |名称|类型|说明|
 | --- |:---:|---:|
 |name|string|名称|
 |age|string|年龄|
 
-5.数据说明：
+4.数据说明：
 
 |名称|类型|说明|
 | --- |:---:|---:|
@@ -87,19 +87,18 @@ $res = (new \Miracle)->index($path)->markdownText($domain)->setMarkdown($path, $
 }
 ```
 ## 测试
+1.请求地址：www.baidu.com/test/test.html
 
-2.请求地址：www.baidu.com/test/test.html
+2.请求方式：post
 
-3.请求方式：post
-
-4.请求参数：
+3.请求参数：
 
 |名称|类型|说明|
 | --- |:---:|---:|
 |name|string|名称|
 |age|string|年龄|
 
-5.数据说明：
+4.数据说明：
 
 |名称|类型|说明|
 | --- |:---:|---:|
