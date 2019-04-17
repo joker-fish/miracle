@@ -8,13 +8,13 @@ Class Miracle
 
     private $description = '## ';
 
-    private $url = '2.请求地址：';
+    private $url = '1.请求地址：';
 
-    private $method = '3.请求方式：';
+    private $method = '2.请求方式：';
 
-    private $param = '4.请求参数：'.PHP_EOL.PHP_EOL.'|名称|类型|说明|'.PHP_EOL.'| --- |:---:|---:|'.PHP_EOL;
+    private $param = '3.请求参数：'.PHP_EOL.PHP_EOL.'|名称|类型|说明|'.PHP_EOL.'| --- |:---:|---:|'.PHP_EOL;
 
-    private $return = '5.数据说明：'.PHP_EOL.PHP_EOL.'|名称|类型|说明|'.PHP_EOL.'| --- |:---:|---:|'.PHP_EOL;
+    private $return = '4.数据说明：'.PHP_EOL.PHP_EOL.'|名称|类型|说明|'.PHP_EOL.'| --- |:---:|---:|'.PHP_EOL;
 
     private $markdwon = '';
 
