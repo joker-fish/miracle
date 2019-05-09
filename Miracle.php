@@ -51,7 +51,21 @@ Class Miracle
                 if (trim($arr[0]) == '@param'){
                     $str .= "|$arr[2]|$arr[1]|$arr[3]|".PHP_EOL;
                 }
-                if (trim($arr[0]) == '@return'){
+                if (trim($arr[0]) == '@faild'){
+                    $arr = explode('^', trim($val));
+                    if (json_decode($arr[1], true) == NULL){
+                        echo 'json格式不正确'.$arr[1];
+                    }
+                    $str .= PHP_EOL.'失败：'.PHP_EOL.PHP_EOL.'```'.PHP_EOL.json_encode(json_decode($arr[1], true), JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT).PHP_EOL.'```'.PHP_EOL.PHP_EOL;
+                }
+                if (trim($arr[0] == '@success')){
+                    $arr = explode('^', trim($val));
+                    if (json_decode($arr[1], true) == NULL){
+                        echo 'json格式不正确'.$arr[1];
+                    }
+                    $str .= PHP_EOL.'成功：'.PHP_EOL.PHP_EOL.'```'.PHP_EOL.json_encode(json_decode($arr[1], true), JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT).PHP_EOL.'```'.PHP_EOL.PHP_EOL;
+                }
+                if (trim($arr[0]) == '@instructions'){
                     $str .= PHP_EOL.$this->return;
                 }
                 if (trim($arr[0]) == '@var'){
@@ -60,13 +74,6 @@ Class Miracle
                         continue;
                     }
                     $str .= "|$arr[2]|$arr[1]|$arr[3]|".PHP_EOL;
-                }
-                if (trim($arr[0] == '@example')){
-                    $arr = explode('^', trim($val));
-                    if (json_decode($arr[1], true) == NULL){
-                        echo 'json格式不正确';
-                    }
-                    $str .= PHP_EOL.'例：'.PHP_EOL.PHP_EOL.'```'.PHP_EOL.json_encode(json_decode($arr[1], true), JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT).PHP_EOL.'```';
                 }
             }
             $this->markdwon .= $str.PHP_EOL;
