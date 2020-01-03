@@ -28,7 +28,7 @@ $res = (new \Miracle)->index($path)->markdownText($domain)->setMarkdown($path, $
                 "code": "102",
                 "msg": "提现余额不足"
                 }]
-     * @seccess ^{
+     * @success ^{
                     "order_id": "119",
                     "code_id": "161",
                     "code": "202487648",
@@ -52,7 +52,7 @@ $res = (new \Miracle)->index($path)->markdownText($domain)->setMarkdown($path, $
 * @method 请求方法
 * @param 请求参数
 * @faild 失败事例
-* @seccess 成功事例
+* @success 成功事例
 * @instructions 数据说明
 * @var 返回参数
 
