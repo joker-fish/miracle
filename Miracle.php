@@ -6,7 +6,7 @@ Class Miracle
 
     private $domain = '';
 
-    private $description = '## ';
+    private $description = '### ';
 
     private $url = '1.请求地址：';
 
@@ -17,6 +17,8 @@ Class Miracle
     private $return = '4.数据说明：'.PHP_EOL.PHP_EOL.'|名称|类型|说明|'.PHP_EOL.'| --- |:---:|---:|'.PHP_EOL;
 
     private $markdwon = '';
+
+    private $file_name = '';
 
     public function index($path='')
     {
@@ -35,12 +37,40 @@ Class Miracle
     }
     public function markdownText($domain)
     {
+        $arr_api = explode(' ', trim($this->arr[0][3]));
+        $arr_author = explode(' ', trim($this->arr[0][4]));
+        $this->file_name = $arr_api[1];
+        if ($arr_api[0] == '@api') {
+            // echo '123123123';die();
+            $this->markdwon = '## '.$arr_api[1].PHP_EOL.'##### 文档创建者：'.$arr_author[1].PHP_EOL.'#####更新时间：'.date('Y-m-d H:i:s').PHP_EOL.PHP_EOL.'----------'.PHP_EOL.PHP_EOL;
+        } else {
+            echo '请标明文档名称及文档创建者';die();
+        }
+
         foreach($this->arr as $key=>$value){
             $str = '';
+            $arr_api = explode(' ', trim($value[3]));
+            if ($arr_api[0] == '@api') {
+                continue;
+            }
             foreach($value as $val){
                 $arr = explode(' ', trim($val));
+                // echo json_encode($arr);die();
                 if ($arr[0] == '@description'){
                     $str .= $this->description.$arr[1].PHP_EOL.PHP_EOL;
+                }
+                if ($arr[0] == '@author') {
+                    $str .= '#### 作者：'.$arr[1].PHP_EOL;
+                }
+                if ($arr[0] == '@uses') {
+                    $str .= '#### 编辑者：';
+                    foreach ($arr as $uses) {
+                        if ($uses == '@uses') {
+                            continue;
+                        }
+                        $str .= $uses.' ';
+                    }
+                    $str .= PHP_EOL.PHP_EOL;
                 }
                 if (trim($arr[0]) == '@url'){
                     $str .= $this->url.$domain.$arr[1].PHP_EOL.PHP_EOL;
@@ -80,9 +110,9 @@ Class Miracle
         }
         return $this;
     }
-    public function setMarkdown($path, $name)
+    public function setMarkdown($path)
     {
 //        dump($path.$name);die();
-        file_put_contents($path.$name, $this->markdwon);
+        file_put_contents($path.$this->file_name.'.md', $this->markdwon);
     }
 }

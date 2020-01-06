@@ -1,9 +1,14 @@
 <?php
-
+/**
+ * @api 测试接口
+ * @author 文档创建者
+ */
 class Referees
 {
     /**
      * @description 业务员奖励提现余额
+     * @author 鱼儿
+     * @uses 鱼 小鱼
      * @url /salesman/referees/referees.html
      * @method get
      * @success ^{
@@ -23,6 +28,8 @@ class Referees
     }
     /**
      * @description 业务员奖励提现记录
+     * @author 鱼儿
+     * @uses 鱼 小鱼
      * @url /salesman/referees/log.html
      * @method get
      * @param int num 每页展示条数
@@ -46,6 +53,8 @@ class Referees
     }
     /**
      * @description 业务员推荐人收益记录
+     * @author 鱼儿
+     * @uses 鱼 小鱼
      * @url /salesman/referees/RefereesLog.html
      * @method get
      * @param int num 每页展示条数
@@ -71,6 +80,8 @@ class Referees
     }
     /**
      * @description 提现
+     * @author 鱼儿
+     * @uses 鱼 小鱼
      * @url /salesman/referees/discount.html
      * @method post
      * @param float price 提现金额
