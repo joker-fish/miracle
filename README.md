@@ -38,8 +38,8 @@ $res = (new \Miracle)->index($path)->markdownText($domain)->setMarkdown($path);
                     "msg": "提现金额不为1000整数"
                 },
                 {
-                "code": "102",
-                "msg": "提现余额不足"
+                    "code": "102",
+                    "msg": "提现余额不足"
                 }]
      * @success ^{
                     "order_id": "119",
